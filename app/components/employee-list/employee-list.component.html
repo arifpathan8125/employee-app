@@ -1,0 +1,47 @@
+
+<mat-toolbar class="cstm-mattoolbar">
+    <span>Employee List <span class="emp-icon add-icon" (click)="onCreateEmployee()"></span></span>
+</mat-toolbar>
+
+<div class="no-employee-div" *ngIf="!employeeList.length && !previousEmployeeList.length">
+    <img class="responsive center" src="../../assets/images/no-employee-img.svg" alt="no-employee-img">
+</div>
+
+<div *ngIf="employeeList.length">
+    <mat-toolbar class="cstm-mattoolbar-Emp">
+        <span>Current employees</span>
+    </mat-toolbar>
+    <mat-list>
+        <mat-list-item *ngFor="let employee of employeeList" class="my-3">
+            <span class="float-start">
+                <span matListItemTitle>{{ employee.name }}</span>
+                <span matListItemLine>{{ employee.role }}</span>
+                <span matListItemLine>From {{ employee.startDate | date:'mediumDate' }}</span>
+            </span>
+
+            <span class="float-end">
+                <span class="emp-icon edit-icon" (click)="onEditEmployee(employee)"></span>
+                <span class="emp-icon delete-icon" (click)="onDeleteEmployee(employee)"></span>
+            </span>
+        </mat-list-item>
+    </mat-list>
+</div>
+<div *ngIf="previousEmployeeList.length">
+    <mat-toolbar class="cstm-mattoolbar-Emp">
+        <span>Previous employees</span>
+    </mat-toolbar>
+    <mat-list>
+        <mat-list-item *ngFor="let employee of previousEmployeeList" class="my-3">
+            <span class="float-start">
+            <span matListItemTitle>{{ employee.name }}</span>
+            <span matListItemLine>{{ employee.role }}</span>
+            <span matListItemLine>{{ employee.startDate | date:'mediumDate' }} - {{ employee.endDate | date:'mediumDate' }}</span>
+        </span>
+
+            <span class="float-end">
+                <span class="emp-icon edit-icon" (click)="onEditEmployee(employee)"></span>
+                <span class="emp-icon delete-icon" (click)="onDeleteEmployee(employee)"></span>
+            </span>
+        </mat-list-item>
+    </mat-list>
+</div>

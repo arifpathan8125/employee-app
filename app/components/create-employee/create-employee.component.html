@@ -1,0 +1,42 @@
+<h2 mat-dialog-title class="addemp-header">{{ empDetails?.id ? 'Update' : 'Add' }} Employee Details</h2>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content class="mat-typography">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="row g-3">
+                        <div class="input-group name-input">
+                            <span class="emp-icon name-icon"></span>
+                            <input type="text" class="form-control" formControlName="name" placeholder="Name"
+                                aria-label="Name">
+                        </div>
+                        <div class="input-group select-role">
+                            <span class="emp-icon role-icon"></span>
+                            <select class="form-select" id="role" formControlName="role">
+                                <option value="" disabled selected hidden>Select role</option>
+                                <option [value]="role.name" *ngFor="let role of roles">{{ role.name }}</option>
+                            </select>
+                        </div>
+                        <div class="container">
+                            <div class="row mt-3 p-0">
+                                <div class="col-sm-5 p-0">
+                                    <app-custom-start-date-picker></app-custom-start-date-picker>
+                                </div>
+                                <div class="col-sm-2">
+                                    <span class="emp-icon arrow-icon"></span>
+                                </div>
+                                <div class="col-sm-5 p-0">
+                                    <app-custom-end-date-picker></app-custom-end-date-picker>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" type="submit" [disabled]="employeeForm.invalid || !startDate()" class="cal-btn">{{ empDetails?.id ? 'Update' : 'Save' }}</button>
+    </mat-dialog-actions>
+</form>
