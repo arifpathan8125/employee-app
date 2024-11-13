@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.emp-icon {
+    background-size: 24px 24px !important;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+.name-icon {
+    background:url('./assets/images/user-icon.svg') no-repeat 50% 50%;
+    position: relative;
+    top: 5px;
+}
+.role-icon {
+    background:url('./assets/images/role-icon.svg') no-repeat 50% 50%;
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    z-index: 999;
+}
+.calendar-icon {
+    background:url('./assets/images/calendar-icon.svg') no-repeat 50% 50%;
+}
+.add-icon {
+    background:url('./assets/images/add-icon.svg') no-repeat 50% 50%;
+    // width: 28px;
+    background-size: 24px 24px !important;
+    border-radius: 7px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    border: 1px solid #fff;
+}
+.edit-icon {
+    background:url('./assets/images/edit-icon.svg') no-repeat 50% 50%;
+    background-size: 14px 14px !important;
+}
+.delete-icon {
+    background:url('./assets/images/delete-icon.svg') no-repeat 50% 50%;
+    background-size: 14px 14px !important;
+}
+.arrow-icon {
+    background:url('./assets/images/arrow-icon.svg') no-repeat 50% 50%;
+    margin-top: 8px;
+}
+.cstm-mattoolbar {
+    background: #1DA1F2 !important;
+    height: 55px !important;
+    span {
+        color: #fff;
+    }
+}
+.cstm-mattoolbar-Emp {
+    background: #F2F2F2 !important;
+    height: 40px !important;
+    span {
+        color: #1DA1F2;
+        font-size: 16px;
+    }
+}
+.cstm-form-field {
+    flex-direction: row !important;
+    display: inline !important;
+    .mat-datepicker-toggle {
+        color: #1DA1F2;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+    .mdc-text-field {
+        height: 40px;
+        background: #fff !important;
+        border: 1px solid #ddd;
+        border-radius: 5px !important;
+        box-shadow: 0 0 0 1px rgba(13, 110, 253, .25);
+    }
+    .mat-mdc-icon-button.mat-mdc-button-base {
+        padding: 7px !important;
+        height: auto !important;
+    }
+    .mdc-text-field--filled .mdc-line-ripple::before {
+        border-bottom: none;
+    }
+    .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+        position: relative;
+        top: -8px;
+        left: 28px;
+    }
+}
+.cal-btn {
+    margin: 10px;
+    padding: 5px 0px;
+    border-radius: 5px !important;
+    background-color: #1DA1F2 !important;
+    color: #fff !important;
+    text-align: center;
+    cursor: pointer;
+    &:disabled {
+        opacity: .5;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .arrow-icon {
+        margin-top: -10px;
+    }
+  }
